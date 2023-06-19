@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=PostRepository::class)
  */
 class Post
@@ -26,11 +28,6 @@ class Post
      * @ORM\Column(type="string", length=255)
      */
     private $subtitle;
-
-    /**
-     * @ORM\Column(type="binary")
-     */
-    private $image;
 
     public function getId(): ?int
     {
@@ -57,18 +54,6 @@ class Post
     public function setSubtitle(string $subtitle): self
     {
         $this->subtitle = $subtitle;
-
-        return $this;
-    }
-
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    public function setImage($image): self
-    {
-        $this->image = $image;
 
         return $this;
     }
