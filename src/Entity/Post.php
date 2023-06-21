@@ -28,6 +28,16 @@ class Post
      * @ORM\Column(type="string", length=255)
      */
     private $subtitle;
+    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $author;
+    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $place;
 
     public function getId(): ?int
     {
@@ -54,6 +64,30 @@ class Post
     public function setSubtitle(string $subtitle): self
     {
         $this->subtitle = $subtitle;
+
+        return $this;
+    }
+    
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(string $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+    
+    public function getPlace(): ?string
+    {
+        return $this->place;
+    }
+
+    public function setPlace(string $place): self
+    {
+        $this->place = $place;
 
         return $this;
     }
